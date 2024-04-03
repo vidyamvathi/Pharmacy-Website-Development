@@ -1,0 +1,156 @@
+
+    /* Default styles */
+h2 {
+  color: rgba(1, 1, 77, 0.866);
+  font-size: 2rem;
+}
+
+section {
+  width: 80%;
+  height: 80%;
+  border: 1px solid black;
+  position: absolute;
+  top: 10%;
+  margin-left: 10%;
+  overflow-y: auto;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+aside {
+  margin: 0;
+  width: 50%;
+  height: 100%;
+  float: right;
+  position: sticky;
+  top: 0;
+}
+
+aside img {
+  width: 100%;
+  height: 100%;
+}
+
+#form-details {
+  width: 40%;
+  padding: 5%;
+  height: auto;
+  background: aliceblue;
+}
+
+#form-details input {
+  margin: 5px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.patient-details input {
+  width: 45%;
+}
+
+#button {
+  position: absolute;
+  bottom: 1%;
+  left: 44.5%;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+
+#button input {
+  background-color: darkorchid;
+  border: 1px solid rgb(0, 255, 76);
+  color: aliceblue;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 5px 8px;
+}
+
+.effect-16 {
+  border: 0;
+  padding: 4px 4px;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.effect-16 ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4caf50;
+  transition: 0.4s;
+}
+
+.effect-16:focus ~ .focus-border,
+.has-content.effect-16 ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+}
+
+.effect-16 ~ label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 9px;
+  color: #aaa;
+  transition: 0.3s;
+  z-index: -1;
+  letter-spacing: 0.5px;
+}
+
+.effect-16:focus ~ label,
+.has-content.effect-16 ~ label {
+  top: -16px;
+  font-size: 12px;
+  color: #4caf50;
+  transition: 0.3s;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  section {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  aside {
+    width: 100%;
+    float: none;
+    position: relative;
+    top: auto;
+  }
+
+  #form-details {
+    width: 100%;
+    padding: 5%;
+  }
+
+  .patient-details input {
+    width: 100%;
+  }
+
+  #button {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #button input {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #button {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #button input {
+    margin: 10px 0;
+  }
+}
+

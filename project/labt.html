@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab-Test Form</title>
+    <link rel="stylesheet" href="css\labformstyle.css" />
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      function handleData() {
+        var form_data = new FormData(document.querySelector("form"));
+
+        if (!form_data.has("langs[]")) {
+          document.getElementById("chk_option_error").style.visibility =
+            "visible";
+          return false;
+        } else {
+          document.getElementById("chk_option_error").style.visibility =
+            "hidden";
+          return true;
+        }
+      }
+    </script>
+    <form onsubmit="return handleData()">
+      <section>
+        <aside>
+          <img src="Images/Lab-Test/lab-test.jpg" alt="" />
+        </aside>
+        <div id="form-details">
+          <article class="patient-details">
+            <h2>1. Your Contact Details</h2>
+            <input
+              class="effect-16"
+              type="text"
+              name="full_name"
+              placeholder="Full Name"
+              required
+            />
+            <input
+              class="effect-16"
+              type="text"
+              name="id"
+              placeholder="Patient Id if exists"
+            /><br />
+            <input
+              class="effect-16"
+              type="number"
+              name="contact_number"
+              placeholder="Contact Number"
+              required
+            />
+            <input
+              type="email"
+              class="effect-16"
+              name="email"
+              placeholder="Email Id"
+            />
+          </article>
+
+          <article class="patient-details">
+            <h2>2. Address</h2>
+            <input
+              type="text"
+              class="effect-16"
+              name="house-no"
+              placeholder="House Number"
+              required
+            />
+            <input
+              type="text"
+              class="effect-16"
+              name="street"
+              placeholder="Street"
+              required
+            /><br />
+            <input
+              type="text"
+              name="area"
+              class="effect-16"
+              placeholder="Area"
+              required
+            />
+            <br />
+            <h4>District</h4>
+            <select name="district" id="district" class="effect-16" required>
+              <option value="choose">Choose</option>
+              <option value="AGR">Ahmedabad</option>
+              <option value="NDL">New Delhi</option>
+              <option value="GRG">Bombay</option>
+              <option value="MTR">Pune</option>
+              <option value="LKO">Kochi</option>
+              <option value="JPR">Bangalore</option>
+              <option value="NOD">Noida</option>
+            </select>
+          </article>
+
+          <article>
+            <h2>3. Choose the Test type</h2>
+            <p>(Check at least one box without fail)</p>
+            <div style="visibility: hidden; color: red" id="chk_option_error">
+              Please select at least one option.
+            </div>
+
+            <div>
+              <input type="checkbox" name="langs[]" id="CBC" value="cbc" />
+              <label for="CBC">CBC</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="langs[]"
+                id="Complete_Urine"
+                value="Urine"
+              />
+              <label for="Complete_Urin">Complete Urine</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="langs[]"
+                id="Lipid_Profile"
+                value="Lipid"
+              />
+              <label for="Lipid_Profile">Lipid Profile</label>
+            </div>
+            <div>
+              <input type="checkbox" name="langs[]" id="TSH" value="Thyroid" />
+              <label for="TSH">Thyroid Stimulating Hormone(TSH)</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="langs[]"
+                id="Glucose_Test"
+                value="Glucose"
+              />
+              <label for="Glucose_Test">Glucose Test</label>
+            </div>
+          </article>
+
+          <article>
+            <h2>4. Do you want a hard copy of the report?</h2>
+            <input
+              type="radio"
+              id="r1"
+              name="option"
+              value="Yes"
+              checked
+              required
+            />
+            <label for="r1">Yes</label>
+            <br />
+            <input type="radio" id="r2" name="option" value="No" />
+            <label for="r2">No</label>
+          </article>
+
+          <article>
+            <h2>5. Select Your Comfortable Date and Time</h2>
+            <input
+              id="special"
+              class="effect-16"
+              type="date"
+              value="Date"
+              required
+            />
+            <input
+              id="special"
+              class="effect-16"
+              type="time"
+              value="time"
+              required
+            />
+          </article>
+        </div>
+      </section>
+
+      <div id="button">
+        <input type="reset" />
+        <input type="submit" />
+      </div>
+    </form>
+  </body>
+</html>
